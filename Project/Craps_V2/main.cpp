@@ -10,6 +10,8 @@
 #include <cstdlib> //Library set random number seed
 #include <ctime> //Library to seed th random number generator
 #include <iomanip> //formatting
+#include <fstream> //File Library
+#include <string.h> //Strign Library
 
 
 using namespace std;
@@ -33,12 +35,18 @@ int main(int argc, char** argv) {
     int l2s=0, l3s=0, l4s=0, l5s=0, l6s=0, l7s=0, // losses vs. rolls
             l8s=0, l9s=0, l10s=0, l11s=0, l12s=0;
     const int SIZE=20;
+    char fileOut[SIZE]="crapOut.dat";
+    string fileIn="crapIn.dat";
+    ofstream out;
+    ifstream in;
 
     
     
     //Input or initialize values Here
-    nGames=36000;
     nRolls=0;
+    out.open(fileOut);
+    in.open(fileIn.c_str());
+    in>>nGames;
     
     
     //Process/Calculations Here
@@ -98,21 +106,28 @@ int main(int argc, char** argv) {
     chkTot=chkWin+chkLoss;
                     
     //Output Located Here
-            cout<<"Number of Games played = "<<nGames<<endl;
-            cout<<"Number of total rolls = "<<nRolls<<endl;
-            cout<<"Roll     Wins    Losses"<<endl;
-            cout<<" 2 "<<setw(9)<<w2s<<setw(9)<<l2s<<endl;
-            cout<<" 3 "<<setw(9)<<w3s<<setw(9)<<l3s<<endl;
-            cout<<" 4 "<<setw(9)<<w4s<<setw(9)<<l4s<<endl;
-            cout<<" 5 "<<setw(5)<<w2s<<setw(9)<<l5s<<endl;
-            cout<<" 6 "<<setw(6)<<w2s<<setw(9)<<l6s<<endl;
-            cout<<" 7 "<<setw(7)<<w2s<<setw(9)<<l7s<<endl;
-            cout<<" 8 "<<setw(9)<<w8s<<setw(9)<<l8s<<endl;
-            cout<<" 9 "<<setw(9)<<w9s<<setw(9)<<l9s<<endl;
-            cout<<" 10 "<<setw(9)<<w10s<<setw(9)<<l10s<<endl;
-            cout<<" 11 "<<setw(9)<<w11s<<setw(9)<<l11s<<endl;
-            cout<<" 12 "<<setw(9)<<w12s<<setw(9)<<l12s<<endl;
-            
+    out<<"Number of Games played  = "<<nGames<<endl;
+    out<<"Number of Games checked = "<<chkTot<<endl;
+    out<<"Number of Wins          = "<<chkWin<<endl;
+    out<<"Number of losses        = "<<chkLoss<<endl;
+    out<<"Percentage Wins         = "<<100.0f*chkWin/chkTot<<"%"<<endl;
+    out<<"Percentage Losses       = "<<100.0f*chkLoss/chkTot<<"%"<<endl;
+    out<<"Number of total rolls   = "<<nRolls<<endl;
+    out<<"Roll     Wins    Losses"<<endl;
+    out<<" 2 "<<setw(9)<<w2s<<setw(9)<<l2s<<endl;
+    out<<" 3 "<<setw(9)<<w3s<<setw(9)<<l3s<<endl;
+    out<<" 4 "<<setw(9)<<w4s<<setw(9)<<l4s<<endl;
+    out<<" 5 "<<setw(5)<<w2s<<setw(9)<<l5s<<endl;
+    out<<" 6 "<<setw(6)<<w2s<<setw(9)<<l6s<<endl;
+    out<<" 7 "<<setw(7)<<w2s<<setw(9)<<l7s<<endl;
+    out<<" 8 "<<setw(9)<<w8s<<setw(9)<<l8s<<endl;
+    out<<" 9 "<<setw(9)<<w9s<<setw(9)<<l9s<<endl;
+    out<<" 10 "<<setw(9)<<w10s<<setw(9)<<l10s<<endl;
+    out<<" 11 "<<setw(9)<<w11s<<setw(9)<<l11s<<endl;
+    out<<" 12 "<<setw(9)<<w12s<<setw(9)<<l12s<<endl;
+
+    out.close();
+    in.close();
             
     //Exit
     return 0;

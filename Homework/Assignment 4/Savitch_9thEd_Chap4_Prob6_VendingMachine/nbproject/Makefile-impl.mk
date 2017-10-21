@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Craps_V2
+PROJECTNAME=Savitch_9thEd_Chap4_Prob6_VendingMachine
 
 # Active Configuration
 DEFAULTCONF=Debug
