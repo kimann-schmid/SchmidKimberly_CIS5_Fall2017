@@ -8,7 +8,7 @@
  * File:   main.cpp
  * Author: Kimberly Schmid
  * Date: November 5, 2017
- * Purpose: Project One Hangman Game
+ * Purpose: Project Two Hangman Game Version Two
  *
  */
 
@@ -17,6 +17,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctime>
+#include <cstring>
 
 using namespace std;
 
