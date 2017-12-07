@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
     
     
     
-    int array[6]={2,5,8,100,20,25};
+    int array[6]={'2','5','8','100','20','25'};
     
    
     cout<<fstlst2(array[6])<<endl; //always outputs 1, cant figure out why
