@@ -14,8 +14,8 @@
 
 //System Libraries
 #include <iostream>
-#include <string.h>
-#include <stdlib.h>
+#include <string>
+//#include <stdlib.h>
 #include <ctime>
 #include <cstring>
 
@@ -75,12 +75,52 @@ int main() {
         }
         else if (answer.find(input) != -1){               //Inserts letter if found in word.
             working.replace(answer.find(input), 1, input);
+            cout<<"You guessed a correct letter!"<<endl;
         }
         else {                                            //If letter not found,
             cout<<"letter not found!"<<endl;
             guesses.append(input);                        //appends letter to "wrong guesses" box.
             x++;
             cout<<6 - x<<" incorrect guess(es) remaining"<<endl;    //Tells user # of guesses remaining.
+                if(x==1){
+                    cout<<"----------"<<endl;
+                    cout<<"|         |"<<endl;
+                    cout<<"|         O"<<endl;
+                    cout<<"|"<<endl;
+                    cout<<"|"<<endl;
+
+            }
+                else if (x==2){
+                    cout<<"----------"<<endl;
+                    cout<<"|         |"<<endl;
+                    cout<<"|        \\O"<<endl;
+                    cout<<"|"<<endl;
+                    cout<<"|"<<endl;
+
+                }
+                else if (x==3){
+                    cout<<"----------"<<endl;
+                    cout<<"|         |"<<endl;
+                    cout<<"|        \\O/"<<endl;
+                    cout<<"|"<<endl;
+                    cout<<"|"<<endl;
+
+                }
+                else if (x==4) {
+                cout<<"----------"<<endl;
+                cout<<"|         |"<<endl;
+                cout<<"|        \\O/"<<endl;
+                cout<<"|         X"<<endl;
+                cout<<"|"<<endl;
+
+                }
+                else if (x==5){
+                cout<<"|        \\O/"<<endl;
+                cout<<"|         |"<<endl;
+                cout<<"|        \\O/"<<endl;
+                cout<<"|         X"<<endl;
+                cout<<"|          \\ "<<endl;
+                }
         }
         if (answer == working){                           //Win condition: user entry (working) matches answer word, game ends.
             cout<<working<<endl<<"You win! Congratulations!"<<endl;
