@@ -20,7 +20,7 @@ using namespace std;
 //User Libraries
 
 //Global Constants - Not variables only Math/Science/Conversion constants
-const float PERCENT=100.0f;                                                     //Conversion to Percent
+const float PERCENT=100.0f;                                                    //Conversion to Percent
 
 //Function Prototypes
 
@@ -32,7 +32,7 @@ int main() {
      //Declare Variables
 
     srand(time(0));
-    string words[] = {"hydrogen", "sodium", "helium", "lead", "cobalt", "oxygen",
+    const string words[] = {"hydrogen", "sodium", "helium", "lead", "cobalt", "oxygen",
                         "caesium", "argon", "krypton", "radon", "fluorine","bromine",
                         "chlorine","arsenic","carbon","zinc","scandium"};        //Answer drawn randomly
     string answer; //= words[rand() % 17];                                       //from string array.
