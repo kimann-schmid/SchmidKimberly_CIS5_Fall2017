@@ -115,7 +115,7 @@ int main() {
 
                 }
                 else if (x==5){
-                cout<<"|        \\O/"<<endl;
+                cout<<"----------"<<endl;
                 cout<<"|         |"<<endl;
                 cout<<"|        \\O/"<<endl;
                 cout<<"|         X"<<endl;
