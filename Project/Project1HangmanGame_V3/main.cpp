@@ -31,7 +31,7 @@ const float PERCENT=100.0f;                                                    /
 int main() {
      //Declare Variables
 
-    srand(time(0));
+    
     const string words[] = {"hydrogen", "sodium", "helium", "lead", "cobalt", "oxygen",
                         "caesium", "argon", "krypton", "radon", "fluorine","bromine",
                         "chlorine","arsenic","carbon","zinc","scandium"};        //Answer drawn randomly
@@ -40,7 +40,7 @@ int main() {
     string guesses;                                                                //Stores incorrect guesses for user reference.
     string input;                                                                  //Used for operating on input letters.
     string alpha = "abcdefghijklmnopqrstuvwxyz";                                   //Used to identify non-alpha characters
-    string playagain;
+    string plyAgn;
     int nGames = 0;                                                                 // Number of games played
     
     int wins = 0;                                                                 //stat-tracking variables
@@ -49,6 +49,7 @@ int main() {
     int loop;
     
         //Initialize Variables
+    srand(time(0));
     
         //Input Data/Variables
     
@@ -153,8 +154,8 @@ int main() {
                 cout<<"You have lost "<<losses<<" game(s)"<<endl;
                 //cout<<"Percentage of games lost is "<<losses/nGames*PERCENT<<"%"<<endl;
                 cout<<"Play again? (y/n)";
-                cin>>playagain;
-                if (playagain == "n"){
+                cin>>plyAgn;
+                if (plyAgn == "n"){
                     loop = 1;
                 }
             }
@@ -174,8 +175,8 @@ int main() {
                 cout<<"You have lost "<<losses<<" game(s)"<<endl;
                 //cout<<"Percentage of games lost is "<<losses/nGames*PERCENT<<"%"<<endl;
                 cout<<"play again? (y/n)";
-                cin>>playagain;
-                if (playagain == "n"){
+                cin>>plyAgn;
+                if (plyAgn == "n"){
                     loop = 1;
                 }
             }
